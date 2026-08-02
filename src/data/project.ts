@@ -170,10 +170,13 @@ export const renderViews: RenderView[] = [
 ];
 
 /**
- * Reservado para un video futuro. Si se define `src`, la interfaz podrá
- * renderizarlo sin rehacer la página. Mientras sea null, no se muestra nada.
+ * Video de presentación en Diseño Industrial.
  */
-export const productVideo: VideoAsset | null = null;
+export const productVideo: VideoAsset = {
+  src: "/videos/destapflex.mp4",
+  title: "Video de presentación — DestapFlex",
+  poster: "/assets/render-principal-1.png",
+};
 
 export const underConstructionMessage =
   "En construcción. Esta sección será desarrollada próximamente.";

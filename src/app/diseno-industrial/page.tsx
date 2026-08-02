@@ -21,15 +21,15 @@ export default function DisenoIndustrialPage() {
       <PageBanner
         eyebrow="Diseño Industrial"
         title="Producto DestapFlex"
-        description="Descripción, componentes, funcionamiento, renders, modelo 3D y parámetros CTS/CTQ del producto en su estado actual."
+        description="Descripción, componentes, funcionamiento, renders, modelo 3D, video y parámetros CTS/CTQ del producto en su estado actual."
       />
       <ProductDescription />
       <TechnicalFeatures />
       <HowItWorks />
       <RenderExplorer />
       <ProductModel3D />
-      <CtsCtqExplorer />
       <ProductVideoSlot />
+      <CtsCtqExplorer />
     </>
   );
 }
