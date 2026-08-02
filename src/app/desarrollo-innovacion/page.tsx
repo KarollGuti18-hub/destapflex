@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { UnderConstruction } from "@/components/ui/UnderConstruction";
 
 export const metadata: Metadata = {
-  title: "Desarrollo de Innovación | DestapFlex",
+  title: "DestapFlex",
   description: "Sección en construcción de DestapFlex.",
 };
 

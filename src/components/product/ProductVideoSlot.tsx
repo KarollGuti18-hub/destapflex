@@ -15,7 +15,6 @@ export function ProductVideoSlot() {
       <div className="container-page">
         <Reveal>
           <SectionTitle
-            eyebrow="Multimedia"
             title="Video de presentación"
             description="Conoce el problema identificado, el funcionamiento de DestapFlex, su público objetivo, los parámetros CTS y CTQ y el valor agregado del producto."
           />

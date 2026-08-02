@@ -10,7 +10,7 @@ import { TechnicalFeatures } from "@/components/product/TechnicalFeatures";
 import { PageBanner } from "@/components/ui/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Diseño Industrial | DestapFlex",
+  title: "DestapFlex",
   description:
     "Conoce DestapFlex: componentes, funcionamiento, renders, modelo 3D y parámetros críticos.",
 };

@@ -8,7 +8,7 @@ import { VsmSection } from "@/components/diagnosis/VsmSection";
 import { PageBanner } from "@/components/ui/PageBanner";
 
 export const metadata: Metadata = {
-  title: "Diagnóstico | DestapFlex",
+  title: "DestapFlex",
   description:
     "Fabricación, VSM, Lean Canvas y decisiones detrás de DestapFlex.",
 };
