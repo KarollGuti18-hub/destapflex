@@ -7,7 +7,7 @@ import { howItWorksSteps } from "@/data/project";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 
-const PHASE_MS = 3200;
+const PHASE_MS = 1800;
 
 type GiraBeat = "idle" | "twist" | "lift";
 
@@ -32,7 +32,7 @@ export function HowItWorks() {
     }
 
     setGiraBeat("twist");
-    const liftTimer = window.setTimeout(() => setGiraBeat("lift"), 1500);
+    const liftTimer = window.setTimeout(() => setGiraBeat("lift"), 700);
     return () => window.clearTimeout(liftTimer);
   }, [phase, reduced]);
 
@@ -85,7 +85,7 @@ export function HowItWorks() {
                 {/* lid + strap + arm: twist sideways, then lift */}
                 <motion.g
                   animate={reduced ? { y: 0 } : { y: liftY }}
-                  transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
                   {/* lid */}
                   <g>
@@ -114,7 +114,7 @@ export function HowItWorks() {
                             opacity: strapOpacity,
                           }
                     }
-                    transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     style={{ transformOrigin: "200px 182px" }}
                   />
                   <motion.ellipse
@@ -136,14 +136,14 @@ export function HowItWorks() {
                             opacity: strapOpacity * 0.7,
                           }
                     }
-                    transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                     style={{ transformOrigin: "200px 182px" }}
                   />
 
                   {/* lock pin */}
                   <motion.g
                     animate={reduced ? undefined : { y: pinY }}
-                    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                   >
                     <rect x="246" y="168" width="10" height="36" rx="4" fill="#6a7582" />
                     <circle cx="251" cy="166" r="7" fill="#101820" />
@@ -161,7 +161,7 @@ export function HowItWorks() {
                             scale: armDepth,
                           }
                     }
-                    transition={{ duration: 1.35, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
                     style={{ transformOrigin: "0px 0px" }}
                   >
                     <g transform="translate(-320, -162)">
@@ -203,7 +203,7 @@ export function HowItWorks() {
                         strokeLinecap="round"
                         initial={{ pathLength: 0 }}
                         animate={{ pathLength: 1 }}
-                        transition={{ duration: 1.1, ease: "easeOut" }}
+                        transition={{ duration: 0.55, ease: "easeOut" }}
                       />
                       <motion.path
                         d="M260 168 L274 178 L258 186"
@@ -214,7 +214,7 @@ export function HowItWorks() {
                         strokeLinejoin="round"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.45, duration: 0.3 }}
+                        transition={{ delay: 0.2, duration: 0.2 }}
                       />
                     </motion.g>
                   ) : null}
@@ -233,7 +233,7 @@ export function HowItWorks() {
                       initial={{ pathLength: 0, opacity: 0 }}
                       animate={{ pathLength: 1, opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.45 }}
+                      transition={{ duration: 0.28 }}
                       markerEnd="url(#arrowUp)"
                     />
                   ) : null}
@@ -263,7 +263,7 @@ export function HowItWorks() {
                     initial={reduced ? false : { opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={reduced ? undefined : { opacity: 0, y: -6 }}
-                    transition={{ duration: 0.35 }}
+                    transition={{ duration: 0.22 }}
                   >
                     {step.title}
                   </motion.p>
