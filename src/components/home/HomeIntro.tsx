@@ -29,7 +29,7 @@ export function HomeIntro() {
               <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight text-navy-950 sm:text-4xl">
                 Pensado para el día a día en la cocina
               </h2>
-              <p className="mt-6 max-w-xl text-[15px] leading-[1.75] text-ink-muted sm:text-base">
+              <p className="prose-body mt-6 max-w-xl text-[15px] leading-[1.75] text-ink-muted sm:text-base">
                 {homeDescription}
               </p>
             </Reveal>

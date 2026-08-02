@@ -68,7 +68,7 @@ export function CtsCtqExplorer() {
                   </dt>
                   <dd className="mt-1.5 text-sm text-ink-soft">{ctq.measurementVariable}</dd>
                 </dl>
-                <p className="mt-4 text-sm leading-relaxed text-ink-muted sm:text-[15px]">
+                <p className="prose-body mt-4 text-sm leading-relaxed text-ink-muted sm:text-[15px]">
                   {ctq.importance}
                 </p>
               </article>

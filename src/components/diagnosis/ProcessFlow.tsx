@@ -71,7 +71,7 @@ export function ProcessFlow() {
             <h3 className="text-xl font-semibold text-ink">
               {active.name}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+            <p className="prose-body mt-3 text-sm leading-relaxed text-ink-muted">
               {active.description}
             </p>
             <dl className="mt-5 grid gap-4 sm:grid-cols-2">

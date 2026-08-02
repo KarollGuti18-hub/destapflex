@@ -41,7 +41,7 @@ export function ProductDescription() {
                 <h3 className="font-display text-lg font-semibold text-navy-950">
                   {block.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-muted sm:text-base">
+                <p className="prose-body mt-3 text-sm leading-relaxed text-ink-muted sm:text-base">
                   {block.body}
                 </p>
               </Card>

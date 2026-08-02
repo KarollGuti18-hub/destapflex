@@ -54,7 +54,7 @@ export function RenderExplorer() {
             <h2 className="font-display mt-4 text-3xl font-semibold tracking-tight sm:text-4xl md:text-[2.75rem]">
               Explora el producto
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
+            <p className="prose-body mt-5 text-base leading-relaxed text-white/65 sm:text-lg">
               Recorre las vistas disponibles del producto y el contexto de uso.
             </p>
           </div>

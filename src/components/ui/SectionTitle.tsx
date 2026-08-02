@@ -32,7 +32,7 @@ export function SectionTitle({
         {title}
       </h2>
       {description ? (
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
+        <p className="prose-body mt-5 max-w-2xl text-base leading-relaxed text-ink-muted sm:text-lg">
           {description}
         </p>
       ) : null}

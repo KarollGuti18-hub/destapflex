@@ -23,7 +23,7 @@ export function Footer() {
               height={62}
               className="h-10 w-auto object-contain"
             />
-            <p className="mt-5 max-w-md text-sm leading-relaxed text-white/65">
+            <p className="prose-body mt-5 max-w-md text-sm leading-relaxed text-white/65">
               DestapFlex en su estado actual: un utensilio ergonómico y
               ajustable para abrir frascos, botellas y envases con menos esfuerzo.
             </p>

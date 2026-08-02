@@ -21,7 +21,7 @@ export function VsmAnalysis() {
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted">
                   Hallazgo {index + 1}
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-ink-muted sm:text-base">
+                <p className="prose-body mt-3 text-sm leading-relaxed text-ink-muted sm:text-base">
                   {finding}
                 </p>
               </Card>
@@ -38,7 +38,7 @@ export function VsmAnalysis() {
               {nextCutDecisions.map((decision) => (
                 <li key={decision} className="flex gap-3 text-sm leading-relaxed text-ink-muted sm:text-base">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-500" aria-hidden="true" />
-                  <span>{decision}</span>
+                  <span className="prose-body min-w-0 flex-1">{decision}</span>
                 </li>
               ))}
             </ul>

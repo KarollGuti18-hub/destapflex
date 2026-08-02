@@ -24,7 +24,7 @@ export function Benefits() {
                 <h3 className="font-display relative -mt-8 text-2xl font-semibold text-navy-950">
                   {benefit.title}
                 </h3>
-                <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-ink-muted">
+                <p className="prose-body mt-4 max-w-xs text-[15px] leading-relaxed text-ink-muted">
                   {benefit.description}
                 </p>
               </article>

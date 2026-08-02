@@ -68,6 +68,13 @@
     text-wrap: balance;
   }
 
+  .prose-body {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
   .font-display {
     font-family: var(--font-syne), var(--font-manrope), "Segoe UI", ui-sans-serif, system-ui, sans-serif;
   }

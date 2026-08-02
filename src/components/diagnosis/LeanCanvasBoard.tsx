@@ -286,7 +286,7 @@ function Cell({
         {items.map((item, i) => (
           <li key={item} className="flex gap-2 text-[12px] leading-snug text-[#3d4450] sm:text-[12.5px]">
             <span className={`mt-0.5 font-semibold ${tone.number}`}>{i + 1}.</span>
-            <span>{item}</span>
+            <span className="prose-body min-w-0 flex-1">{item}</span>
           </li>
         ))}
       </ul>
@@ -336,7 +336,7 @@ function ValueProposition() {
             />
           </motion.div>
 
-        <p className="mt-3 max-w-[17rem] text-center text-[12.5px] leading-relaxed text-[#5a6170]">
+        <p className="prose-body mt-3 max-w-[17rem] text-[12.5px] leading-relaxed text-[#5a6170]">
           {uniqueValue.body}
         </p>
       </div>

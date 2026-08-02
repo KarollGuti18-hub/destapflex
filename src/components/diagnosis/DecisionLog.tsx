@@ -32,7 +32,7 @@ export function DecisionLog() {
                   <h3 className="mt-2 text-lg font-semibold text-ink">
                     {entry.decision}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                  <p className="prose-body mt-2 text-sm leading-relaxed text-ink-muted">
                     {entry.justification}
                   </p>
                 </Card>

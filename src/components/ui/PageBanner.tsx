@@ -24,7 +24,7 @@ export function PageBanner({ eyebrow, title, description }: PageBannerProps) {
         <h1 className="font-display mt-4 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl md:text-[3.25rem] md:leading-[1.08]">
           {title}
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
+        <p className="prose-body mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
           {description}
         </p>
       </div>

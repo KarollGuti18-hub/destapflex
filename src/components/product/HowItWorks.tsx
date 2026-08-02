@@ -305,7 +305,7 @@ export function HowItWorks() {
                             {item.title}
                           </p>
                           <p
-                            className={`mt-1.5 text-sm leading-relaxed ${
+                            className={`prose-body mt-1.5 text-sm leading-relaxed ${
                               active ? "text-white/70" : "text-ink-muted"
                             }`}
                           >

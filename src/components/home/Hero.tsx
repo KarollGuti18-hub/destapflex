@@ -68,7 +68,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="mt-6 max-w-md text-base leading-relaxed text-ink-muted sm:text-lg"
+            className="prose-body mt-6 max-w-md text-base leading-relaxed text-ink-muted sm:text-lg"
             {...fade(0.12)}
           >
             {siteMeta.productName}: utensilio ergonómico y ajustable para abrir

@@ -36,7 +36,7 @@ export function TechnicalFeatures() {
                   <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-muted">
                     Función
                   </p>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft sm:text-[15px]">
+                  <p className="prose-body mt-2 text-sm leading-relaxed text-ink-soft sm:text-[15px]">
                     {component.function}
                   </p>
                 </div>

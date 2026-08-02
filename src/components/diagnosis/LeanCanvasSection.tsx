@@ -33,7 +33,7 @@ export function LeanCanvasSection() {
                       className="mt-2 h-1 w-1 shrink-0 rounded-full bg-amber-500"
                       aria-hidden="true"
                     />
-                    {item}
+                    <span className="prose-body min-w-0 flex-1">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -52,7 +52,7 @@ export function LeanCanvasSection() {
                       className="mt-2 h-1 w-1 shrink-0 rounded-full bg-navy-700"
                       aria-hidden="true"
                     />
-                    {item}
+                    <span className="prose-body min-w-0 flex-1">{item}</span>
                   </li>
                 ))}
               </ul>
