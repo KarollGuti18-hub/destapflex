@@ -1,0 +1,112 @@
+import type { AssetRef } from "@/types";
+
+/**
+ * Mapa central de recursos del portafolio.
+ * Conserva las rutas originales y las copias públicas con nombres seguros.
+ */
+export const assets = {
+  logo: {
+    id: "logo",
+    role: "Identidad visual / logo DestapFlex",
+    originalPath: "Logo/Logo DestapFlex.png",
+    publicPath: "/assets/logo.png",
+    alt: "Logo de DestapFlex",
+    width: 3718,
+    height: 1143,
+  },
+  renderPrincipal1: {
+    id: "render-principal-1",
+    role: "Render principal del producto",
+    originalPath: "Renders/Render principal 1.png",
+    publicPath: "/assets/render-principal-1.png",
+    alt: "Render principal de DestapFlex",
+    width: 1856,
+    height: 2294,
+  },
+  renderPrincipal2: {
+    id: "render-principal-2",
+    role: "Render principal alterno",
+    originalPath: "Renders/Render principal 2.png",
+    publicPath: "/assets/render-principal-2.png",
+    alt: "Segundo render principal de DestapFlex",
+    width: 1824,
+    height: 2298,
+  },
+  renderFrontal: {
+    id: "render-frontal",
+    role: "Vista frontal",
+    originalPath: "Renders/Render vista frontal.png",
+    publicPath: "/assets/render-vista-frontal.png",
+    alt: "Vista frontal de DestapFlex",
+    width: 1408,
+    height: 2954,
+  },
+  renderLateral: {
+    id: "render-lateral",
+    role: "Vista lateral",
+    originalPath: "Renders/Render vista lateral.png",
+    publicPath: "/assets/render-vista-lateral.png",
+    alt: "Vista lateral de DestapFlex",
+    width: 1184,
+    height: 3582,
+  },
+  renderPosterior: {
+    id: "render-posterior",
+    role: "Vista posterior",
+    originalPath: "Renders/Render vista posterior.png",
+    publicPath: "/assets/render-vista-posterior.png",
+    alt: "Vista posterior de DestapFlex",
+    width: 1600,
+    height: 2630,
+  },
+  renderContexto: {
+    id: "render-contexto",
+    role: "Contexto de uso",
+    originalPath: "Renders/Render contexto de uso.png",
+    publicPath: "/assets/render-contexto-uso.png",
+    alt: "DestapFlex en contexto de uso",
+    width: 1952,
+    height: 2202,
+  },
+  vsm: {
+    id: "vsm",
+    role: "Value Stream Mapping",
+    originalPath: "VSM/IMG_3330.PNG",
+    publicPath: "/assets/vsm.png",
+    alt: "Diagrama Value Stream Mapping de DestapFlex",
+    width: 1366,
+    height: 768,
+  },
+  leanCanvas: {
+    id: "lean-canvas",
+    role: "Lean Canvas actual",
+    originalPath: "Lean Canvas/9C1498ED-3ED8-4CE8-9D54-78188D83FFCF.png",
+    publicPath: "/assets/lean-canvas.png",
+    alt: "Lean Canvas actual de DestapFlex",
+    width: 1536,
+    height: 1024,
+  },
+  model3d: {
+    id: "model-3d",
+    role: "Modelo 3D interactivo del ensamble DestapFlex",
+    originalPath: "public/models/destapFlex.glb",
+    publicPath: "/models/destapFlex.glb",
+    alt: "Modelo tridimensional interactivo del ensamble completo de DestapFlex",
+  },
+  textoTaller: {
+    id: "texto-taller",
+    role: "Documento académico de descripción y CTS/CTQ",
+    originalPath: "Textos/Taller 1 Gestion tecnologica.docx",
+    publicPath: "",
+    alt: "Documento Taller 1 Gestión tecnológica",
+  },
+  bitacoraProceso: {
+    id: "bitacora-proceso",
+    role: "Documento de proceso, VSM y bitácora",
+    originalPath: "Bitacora/Proceso gestion tecnologica.docx",
+    publicPath: "",
+    alt: "Documento Proceso gestión tecnológica",
+  },
+} as const satisfies Record<string, AssetRef>;
+
+export type AssetKey = keyof typeof assets;
