@@ -1,5 +1,6 @@
+import { assets } from "@/data/assets";
 import { leanCanvasObjective, leanCanvasSummary } from "@/data/project";
-import { LeanCanvasBoard } from "@/components/diagnosis/LeanCanvasBoard";
+import { ImageLightbox } from "@/components/ui/ImageLightbox";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 
@@ -19,7 +20,14 @@ export function LeanCanvasSection() {
         </Reveal>
 
         <Reveal className="mt-10">
-          <LeanCanvasBoard />
+          <ImageLightbox
+            src={assets.leanCanvas.publicPath}
+            alt={assets.leanCanvas.alt}
+            width={assets.leanCanvas.width}
+            height={assets.leanCanvas.height}
+            caption="Lean Canvas ilustrado de DestapFlex"
+            sizes="(max-width: 768px) 100vw, 1000px"
+          />
         </Reveal>
 
         <div className="mt-8 grid gap-px overflow-hidden rounded-2xl border border-[var(--color-line)] bg-[var(--color-line)] md:grid-cols-2">
