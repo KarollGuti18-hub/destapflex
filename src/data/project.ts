@@ -184,15 +184,144 @@ export const vsmObjective =
 export const leanCanvasObjective =
   "El Lean Canvas permite organizar de forma visual los aspectos principales del modelo de negocio de DestapFlex, como el problema, los usuarios, la propuesta de valor, los canales, los costos y las fuentes de ingreso. Su aplicación permite identificar riesgos y definir qué elementos deben validarse durante el proceso de innovación.";
 
+export const leanCanvasSlogan = "Abre más. Esfuérzate menos.";
+
+/** Íconos minimalistas (contorno) para cada bloque, excepto la UVP con foto de producto. */
+export type LeanCanvasIcon =
+  | "problem"
+  | "solution"
+  | "segments"
+  | "advantage"
+  | "metrics"
+  | "channels"
+  | "costs"
+  | "revenue";
+
+type LeanCanvasListBlock = {
+  title: string;
+  items: string[];
+  icon: LeanCanvasIcon;
+};
+
+type LeanCanvasValueBlock = {
+  title: string;
+  body: string;
+  productImage: {
+    src: string;
+    alt: string;
+  };
+};
+
+export const leanCanvasBlocks: {
+  problem: LeanCanvasListBlock;
+  solution: LeanCanvasListBlock;
+  uniqueValue: LeanCanvasValueBlock;
+  unfairAdvantage: LeanCanvasListBlock;
+  customerSegments: LeanCanvasListBlock;
+  keyMetrics: LeanCanvasListBlock;
+  channels: LeanCanvasListBlock;
+  costStructure: LeanCanvasListBlock;
+  revenueStreams: LeanCanvasListBlock;
+} = {
+  problem: {
+    title: "Problema",
+    items: [
+      "Frascos y tapas rígidas difíciles de abrir.",
+      "Dolor y tensión en manos (especialmente adultos mayores, artritis).",
+      "Frustración y dependencia de ayuda.",
+      "El mango de alternativas actuales es incómodo o poco intuitivo.",
+    ],
+    icon: "problem",
+  },
+  solution: {
+    title: "Solución",
+    items: [
+      "Diseño ergonómico avanzado (mango antideslizante con TPE, textura tipo diamante).",
+      "Sistema de correa flexible ajustable (caucho TPU, rango 20 – 160 mm).",
+      "Mecanismo de bloqueo tipo bola (pin de acero inoxidable).",
+      "Diseño compacto con símbolos e instrucciones claros.",
+    ],
+    icon: "solution",
+  },
+  uniqueValue: {
+    title: "Propuesta única de valor",
+    body: "Un destapador ergonómico y ajustable que permite abrir recipientes de diferentes tamaños con menor esfuerzo, comodidad y seguridad.",
+    productImage: {
+      src: "/assets/destapflex-producto.png",
+      alt: "DestapFlex — vista de producto",
+    },
+  },
+  unfairAdvantage: {
+    title: "Ventaja injusta",
+    items: [
+      "Materiales sostenibles (polímero ABS reciclable).",
+      "Funcionalidad dual (cuñas metálicas para botellas tipo cerveza).",
+      "Sistema de agarre antideslizante y diseño ajustable exclusivo.",
+    ],
+    icon: "advantage",
+  },
+  customerSegments: {
+    title: "Segmentos de clientes",
+    items: [
+      "Familias medianas (2 – 4 integrantes, estrato medio-bajo).",
+      "Personas con poca fuerza o movilidad reducida (artritis, túnel carpiano).",
+      "Adultos mayores que buscan autonomía.",
+      "Restaurantes y cafeterías.",
+    ],
+    icon: "segments",
+  },
+  keyMetrics: {
+    title: "Métricas clave",
+    items: [
+      "Satisfacción del cliente (encuestas).",
+      "Tasa de recompra y recomendaciones.",
+      "Adquisición de nuevos clientes.",
+      "Productos / unidades vendidas por mes.",
+      "Usuarios activos en la página de ventas.",
+    ],
+    icon: "metrics",
+  },
+  channels: {
+    title: "Canales",
+    items: [
+      "Tiendas virtuales (e-commerce propio).",
+      "Marketplaces (Amazon, etc.) y tiendas online.",
+      "Redes sociales.",
+      "Tiendas de artículos de cocina y hogar.",
+      "Ferreterías y restaurantes.",
+    ],
+    icon: "channels",
+  },
+  costStructure: {
+    title: "Estructura de costos",
+    items: [
+      "Materiales (ABS, TPE, TPU, acero inoxidable) y materia prima.",
+      "Fabricación, moldeo, maquinaria y mano de obra.",
+      "Empaque, logística y distribución.",
+      "Publicidad y marketing.",
+    ],
+    icon: "costs",
+  },
+  revenueStreams: {
+    title: "Flujos de ingreso",
+    items: [
+      "Venta del destapador (producto principal).",
+      "Venta de mangos de repuesto.",
+      "Venta al por mayor a distribuidores.",
+      "Comercialización a restaurantes, hoteles, marketplaces y tiendas.",
+    ],
+    icon: "revenue",
+  },
+};
+
+/** Resumen compacto usado en otras vistas; alineado al Lean Canvas completo. */
 export const leanCanvasSummary = {
   problem:
     "Los usuarios presentan dificultad para abrir recipientes de diferentes tamaños porque los destapadores tradicionales requieren fuerza y no se adaptan a todas las tapas.",
   segments: [
-    "Adultos mayores",
-    "Personas con poca fuerza o movilidad en las manos",
-    "Hogares",
-    "Restaurantes",
-    "Cafeterías",
+    "Familias medianas (2 – 4 integrantes, estrato medio-bajo)",
+    "Personas con movilidad reducida (artritis, túnel carpiano)",
+    "Adultos mayores que buscan autonomía",
   ],
   valueProposition:
     "Un destapador ergonómico y ajustable que permite abrir recipientes de diferentes tamaños con menor esfuerzo, comodidad y seguridad.",

@@ -68,6 +68,15 @@ export const assets = {
     width: 1952,
     height: 2202,
   },
+  productClean: {
+    id: "product-clean",
+    role: "Producto aislado sin fondo",
+    originalPath: "assets/destapflex-producto.png",
+    publicPath: "/assets/destapflex-producto.png",
+    alt: "DestapFlex — vista de producto",
+    width: 318,
+    height: 1023,
+  },
   vsm: {
     id: "vsm",
     role: "Value Stream Mapping",
