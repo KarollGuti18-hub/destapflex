@@ -11,13 +11,12 @@ export function CtsCtqExplorer() {
   const active = ctsCategories.find((item) => item.id === activeId) ?? ctsCategories[0];
 
   return (
-    <section className="section-pad bg-white/50">
+    <section id="cts-ctq-anteriores" className="section-pad bg-white/50">
       <div className="container-wide">
         <Reveal>
           <SectionTitle
-            eyebrow="CTS y CTQ"
-            title="Parámetros críticos del producto"
-            description="Selecciona una CTS para ver únicamente las CTQ relacionadas documentadas."
+            title="CTS y CTQ anteriores"
+            description="Parámetros críticos del producto en su versión actual, conservados para evidenciar el cambio respecto a las CTS y CTQ nuevas."
           />
         </Reveal>
 

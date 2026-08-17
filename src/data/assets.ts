@@ -95,6 +95,15 @@ export const assets = {
     width: 1536,
     height: 1024,
   },
+  customerJourney: {
+    id: "customer-journey",
+    role: "Customer Journey Map",
+    originalPath: "CJM/CJM Destapador d.pdf",
+    publicPath: "/assets/customer-journey-map.png",
+    alt: "Customer Journey Map de DestapFlex",
+    width: 2400,
+    height: 1350,
+  },
   model3d: {
     id: "model-3d",
     role: "Modelo 3D interactivo del ensamble DestapFlex",

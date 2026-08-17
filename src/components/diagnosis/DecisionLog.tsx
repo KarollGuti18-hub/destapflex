@@ -5,7 +5,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 
 export function DecisionLog() {
   return (
-    <section id="bitacora" className="px-5 py-16 sm:px-8 md:py-24 lg:px-12">
+    <section id="bitacora-decisiones" className="px-5 py-16 sm:px-8 md:py-24 lg:px-12">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <SectionTitle
