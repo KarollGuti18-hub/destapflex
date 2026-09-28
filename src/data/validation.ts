@@ -323,7 +323,7 @@ export const patents: PatentRecord[] = [
     description: "Patente de diseño ornamental de un abrelatas compacto de líneas suavizadas.",
     addedValue: "Apariencia ergonómica y fácil de sujetar.",
     drawback: "Solo protege la apariencia, no el mecanismo.",
-    href: "https://patents.google.com/patent/USD562658S/en",
+    href: "https://patents.google.com/patent/USD562658S1/en",
     relevance: "referencia",
   },
   {
@@ -334,7 +334,7 @@ export const patents: PatentRecord[] = [
     description: "Abridor metálico con ranura para cortar cápsulas de vino.",
     addedValue: "Una sola pieza que corta la envoltura y destapa.",
     drawback: "Limitado a botellas con chapa o cápsula.",
-    href: "https://patents.google.com/patent/USD962030S/en",
+    href: "https://patents.google.com/patent/USD962030S1/en",
     relevance: "referencia",
   },
   {
@@ -345,7 +345,7 @@ export const patents: PatentRecord[] = [
     description: "Llave metálica plana que integra una muesca abridora.",
     addedValue: "Monobloque compacto, fácil de llevar.",
     drawback: "Brazo de palanca corto y un solo uso.",
-    href: "https://patents.google.com/patent/USD726517S/en",
+    href: "https://patents.google.com/patent/USD726517S1/en",
     relevance: "referencia",
   },
   {
