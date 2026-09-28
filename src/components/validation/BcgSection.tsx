@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { assets } from "@/data/assets";
 import {
   bcgReading,
   breakEven,
@@ -72,6 +73,24 @@ function formatCop(value: number) {
   });
 }
 
+const brandLogos: Record<string, string> = {
+  oxo: "/assets/bcg/oxo.png",
+  whirlpool: "/assets/bcg/whirlpool.png",
+  seb: "/assets/bcg/seb.png",
+  newell: "/assets/bcg/newell.png",
+  conair: "/assets/bcg/conair.png",
+  spectrum: "/assets/bcg/spectrum.png",
+  hamilton: "/assets/bcg/hamilton.png",
+  lifetime: "/assets/bcg/lifetime.png",
+  zwilling: "/assets/bcg/zwilling.png",
+  fiskars: "/assets/bcg/fiskars.png",
+  tramontina: "/assets/bcg/tramontina.png",
+  kuhn: "/assets/bcg/kuhn.png",
+  zyliss: "/assets/bcg/zyliss.png",
+  "kitchen-mama": "/assets/bcg/kitchen-mama.png",
+  etac: "/assets/bcg/etac.png",
+};
+
 const points = [
   ...competitors.map((item) => ({
     id: item.id,
@@ -80,6 +99,7 @@ const points = [
     sales: item.categorySalesUsdM,
     quadrant: item.quadrant,
     growth: marketGrowth,
+    logo: brandLogos[item.id],
   })),
   {
     id: "destapflex",
@@ -88,8 +108,16 @@ const points = [
     sales: destapFlexBcg.categorySalesUsdM,
     quadrant: "Perro" as const,
     growth: destapFlexBcg.growth,
+    logo: assets.logo.publicPath,
   },
 ];
+
+const quadrantLayout = [
+  { name: "Interrogante", hint: "Crecimiento alto, participación baja" },
+  { name: "Estrella", hint: "Crecimiento alto, participación alta" },
+  { name: "Perro", hint: "Crecimiento bajo, participación baja" },
+  { name: "Vaca", hint: "Crecimiento bajo, participación alta" },
+] as const;
 
 export function BcgSection() {
   const [activeId, setActiveId] = useState("destapflex");
@@ -343,6 +371,52 @@ export function BcgSection() {
           </svg>
         </div>
 
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">
+          {quadrantLayout.map((quadrant) => {
+            return (
+              <section
+                key={quadrant.name}
+                className="rounded-2xl border border-[var(--color-line)] bg-white p-4"
+              >
+                <h3 className="font-display text-lg font-semibold text-navy-950">{quadrant.name}</h3>
+                <p className="mt-1 text-xs text-ink-muted">{quadrant.hint}</p>
+                {points.some((point) => point.quadrant === quadrant.name) ? (
+                  <ul className="mt-3 flex flex-wrap gap-2">
+                    {points
+                      .filter((point) => point.quadrant === quadrant.name)
+                      .map((point) => (
+                        <li key={point.id}>
+                          <button
+                            type="button"
+                            aria-pressed={point.id === activeId}
+                            onClick={() => setActiveId(point.id)}
+                            className={`flex h-16 min-w-28 items-center justify-center rounded-xl border bg-white px-2 ${
+                              point.id === activeId
+                                ? "border-[#70AD47] ring-2 ring-[#70AD47]"
+                                : "border-[var(--color-line)]"
+                            }`}
+                          >
+                            {point.logo ? (
+                              <img
+                                src={point.logo}
+                                alt={point.label}
+                                className="max-h-12 max-w-28 object-contain"
+                              />
+                            ) : (
+                              <span className="px-2 text-sm font-semibold text-navy-950">{point.label}</span>
+                            )}
+                          </button>
+                        </li>
+                      ))}
+                  </ul>
+                ) : (
+                  <p className="mt-3 text-sm text-ink-muted">Ninguna de las 15 marcas.</p>
+                )}
+              </section>
+            );
+          })}
+        </div>
+
         <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Empresas en la matriz BCG">
           {points.map((point) => (
             <button
@@ -350,10 +424,17 @@ export function BcgSection() {
               type="button"
               aria-pressed={point.id === activeId}
               onClick={() => setActiveId(point.id)}
-              className={`rounded-full px-3 py-1.5 text-sm font-semibold ${
+              className={`inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-semibold ${
                 point.id === activeId ? "bg-navy-900 text-white" : "bg-white text-navy-800 ring-1 ring-[var(--color-line)]"
               }`}
             >
+              {point.logo ? (
+                <img
+                  src={point.logo}
+                  alt=""
+                  className="h-5 w-8 object-contain"
+                />
+              ) : null}
               {point.label}
             </button>
           ))}
