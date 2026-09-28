@@ -10,6 +10,7 @@ interface ImageLightboxProps {
   height: number;
   caption?: string;
   className?: string;
+  imageClassName?: string;
   priority?: boolean;
   sizes?: string;
 }
@@ -21,6 +22,7 @@ export function ImageLightbox({
   height,
   caption,
   className = "",
+  imageClassName = "h-auto w-full object-contain transition duration-300 group-hover:scale-[1.01]",
   priority = false,
   sizes = "(max-width: 768px) 100vw, 900px",
 }: ImageLightboxProps) {
@@ -60,7 +62,7 @@ export function ImageLightbox({
             alt={alt}
             width={width}
             height={height}
-            className="h-auto w-full object-contain transition duration-300 group-hover:scale-[1.01]"
+            className={imageClassName}
             sizes={sizes}
             priority={priority}
           />

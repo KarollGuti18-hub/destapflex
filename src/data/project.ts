@@ -19,6 +19,7 @@ export const siteMeta = {
 
 export const navigation: NavItem[] = [
   { href: "/", label: "Inicio" },
+  { href: "/segundo-corte", label: "Segundo Corte" },
   { href: "/diseno-industrial", label: "Diseño Industrial" },
   { href: "/gestion-tecnologica", label: "Gestión Tecnológica" },
   { href: "/diagnostico", label: "Diagnóstico" },
