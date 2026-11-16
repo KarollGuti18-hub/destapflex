@@ -18,13 +18,12 @@ export const siteMeta = {
 };
 
 export const navigation: NavItem[] = [
-  { href: "/", label: "Inicio" },
-  { href: "/segundo-corte", label: "Segundo Corte" },
-  { href: "/diseno-industrial", label: "Diseño Industrial" },
-  { href: "/gestion-tecnologica", label: "Gestión Tecnológica" },
-  { href: "/diagnostico", label: "Diagnóstico" },
-  { href: "/desarrollo-innovacion", label: "Desarrollo de Innovación" },
-  { href: "/viabilidad-validacion", label: "Viabilidad y Validación" },
+  { href: "/", label: "Inicio", group: "Primer corte" },
+  { href: "/diseno-industrial", label: "Diseño Industrial", group: "Primer corte" },
+  { href: "/diagnostico", label: "Diagnóstico", group: "Primer corte" },
+  { href: "/segundo-corte", label: "Segundo Corte", group: "Segundo corte" },
+  { href: "/viabilidad-validacion", label: "Viabilidad y Validación", group: "Tercer corte" },
+  { href: "/desarrollo-innovacion", label: "Desarrollo de Innovación", group: "Tercer corte" },
 ];
 
 export const teamMembers: TeamMember[] = [

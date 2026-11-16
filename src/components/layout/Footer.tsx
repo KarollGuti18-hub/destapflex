@@ -29,21 +29,29 @@ export function Footer() {
             </p>
           </div>
           <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-400">
-              Navegación
-            </p>
-            <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-              {navigation.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-white/75 transition hover:text-white"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
+            <div className="grid gap-8 sm:grid-cols-3">
+              {["Primer corte", "Segundo corte", "Tercer corte"].map((group) => (
+                <div key={group}>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-amber-400">
+                    {group}
+                  </p>
+                  <ul className="mt-4 grid gap-3">
+                    {navigation
+                      .filter((item) => item.group === group)
+                      .map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            className="text-sm text-white/75 transition hover:text-white"
+                          >
+                            {item.label}
+                          </Link>
+                        </li>
+                      ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
         <div className="mt-14 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">

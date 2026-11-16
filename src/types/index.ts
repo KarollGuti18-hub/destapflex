@@ -1,6 +1,7 @@
 export interface NavItem {
   href: string;
   label: string;
+  group: string;
 }
 
 export interface TeamMember {

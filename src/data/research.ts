@@ -249,8 +249,5 @@ export const bitacoraCierre = {
       body: "Formulación del enfoque innovador centrado en un sistema de bloqueo dinámico de un solo toque, optimización volumétrica compacta, ergonomía de alta fricción y versatilidad para abrir múltiples empaques.",
     },
   ],
-  status: [
-    { area: "Diseño Industrial", state: "Completo" },
-    { area: "Gestión Tecnológica", state: "Pendiente de iniciar para el siguiente corte" },
-  ],
+  status: [{ area: "Diseño Industrial", state: "Completo" }],
 };

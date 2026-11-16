@@ -13,6 +13,16 @@ function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+function navigationGroups() {
+  const groups: { name: string; items: typeof navigation }[] = [];
+  for (const item of navigation) {
+    const last = groups[groups.length - 1];
+    if (!last || last.name !== item.group) groups.push({ name: item.group, items: [item] });
+    else last.items.push(item);
+  }
+  return groups;
+}
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -68,33 +78,42 @@ export function Header() {
           <span className="sr-only">{siteMeta.productName}</span>
         </Link>
 
-        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Principal">
-          {navigation.map((item) => {
-            const active = isActive(pathname, item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                aria-current={active ? "page" : undefined}
-                className={`relative whitespace-nowrap px-2.5 py-2 text-[12px] font-medium tracking-wide transition xl:px-3 xl:text-[13px] ${
-                  active ? "text-navy-900" : "text-ink-muted hover:text-navy-800"
-                }`}
-              >
-                {item.label}
-                {active ? (
-                  <span
-                    className="absolute inset-x-2.5 -bottom-0.5 h-px bg-amber-500 xl:inset-x-3"
-                    aria-hidden="true"
-                  />
-                ) : null}
-              </Link>
-            );
-          })}
+        <nav
+          className="hidden min-w-0 flex-1 items-end justify-end gap-3 overflow-x-auto xl:flex"
+          aria-label="Principal"
+        >
+          {navigationGroups().map((group) => (
+            <div key={group.name} className="flex flex-col">
+              <span className="px-2.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-amber-600">
+                {group.name}
+              </span>
+              <div className="flex items-center">
+                {group.items.map((item) => {
+                  const active = isActive(pathname, item.href);
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      aria-current={active ? "page" : undefined}
+                      className={`relative whitespace-nowrap px-2.5 py-1.5 text-[12px] font-medium tracking-wide transition xl:text-[13px] ${
+                        active ? "text-navy-900" : "text-ink-muted hover:text-navy-800"
+                      }`}
+                    >
+                      {item.label}
+                      {active ? (
+                        <span className="absolute inset-x-2.5 -bottom-0.5 h-px bg-amber-500" aria-hidden="true" />
+                      ) : null}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </nav>
 
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-md border border-[var(--color-line)] bg-white/70 px-3 py-2 text-sm font-medium text-navy-800 transition hover:border-navy-800 lg:hidden"
+          className="inline-flex items-center justify-center rounded-md border border-[var(--color-line)] bg-white/70 px-3 py-2 text-sm font-medium text-navy-800 transition hover:border-navy-800 xl:hidden"
           aria-expanded={open}
           aria-controls={menuId}
           onClick={() => setOpen((value) => !value)}
@@ -113,28 +132,35 @@ export function Header() {
       {open ? (
         <div
           id={menuId}
-          className="border-t border-[var(--color-line)] bg-white/95 backdrop-blur-xl lg:hidden"
+          className="border-t border-[var(--color-line)] bg-white/95 backdrop-blur-xl xl:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="Menú de navegación"
         >
           <nav className="mx-auto flex max-w-[1400px] flex-col px-5 py-4 sm:px-8" aria-label="Móvil">
-            {navigation.map((item) => {
-              const active = isActive(pathname, item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  onClick={() => setOpen(false)}
-                  className={`border-b border-[var(--color-line)] px-1 py-4 text-base font-medium transition last:border-0 ${
-                    active ? "text-navy-900" : "text-ink-soft hover:text-navy-800"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
+            {navigationGroups().map((group) => (
+              <div key={group.name} className="border-b border-[var(--color-line)] py-3 last:border-0">
+                <p className="px-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-amber-600">
+                  {group.name}
+                </p>
+                {group.items.map((item) => {
+                  const active = isActive(pathname, item.href);
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      aria-current={active ? "page" : undefined}
+                      onClick={() => setOpen(false)}
+                      className={`block px-1 py-2.5 text-base font-medium transition ${
+                        active ? "text-navy-900" : "text-ink-soft hover:text-navy-800"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            ))}
           </nav>
         </div>
       ) : null}
